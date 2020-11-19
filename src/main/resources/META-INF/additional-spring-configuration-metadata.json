@@ -1,0 +1,22 @@
+{
+  "properties": [
+    {
+      "name": "ruphy.mapper.autogenerate.entityPath",
+      "type": "java.lang.String",
+      "description": "生成entity文件的路径.",
+      "defaultValue": ""
+    },
+    {
+      "name": "ruphy.mapper.autogenerate.mapperPath",
+      "type": "java.lang.String",
+      "description": "生成mapper文件的路径.",
+      "defaultValue": ""
+    },
+    {
+      "name": "ruphy.mapper.autogenerate.replaceFile",
+      "type": "java.lang.Boolean",
+      "description": "是否替换已经存在的文件.",
+      "defaultValue": false
+    }
+  ]
+}
