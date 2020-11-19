@@ -27,7 +27,7 @@ com.example.xxx.entity
 ```text
 git@github.com:muphy1112/ruphy-tk-mapper-spring-boot-starter.git
 cd ruphy-tk-mapper-spring-boot-starter
-maven install
+mvn install
 ```
 ### 添加pom依赖
 ```xml
@@ -41,7 +41,7 @@ maven install
 ```properties
 # 目前只支持使用绝对路径，这样也方便为其他项目生成文件，如下配置会自动为生成的类添加包名：me.muphy.entity 和 me.muphy.mapper
 muphy.mapper.autogenerate.entity-path=E:/workspace/recorder/src/main/java/me/muphy/entity
-muphy.mapper.autogenerate.mapper-path=E:/workspace/recorder/src/main/java/me/muphy/mapper
+muphy.mapper.autogenerate.mapper-path=E:/workspace/recorder/src/main/java/me/muphy/mapper # 接口和xml公用
 # 此配置设置是否覆盖已经存在的文件
 muphy.mapper.autogenerate.replace-file=false
 # 添加datasource相关的配置
@@ -53,7 +53,10 @@ public class DemoApplication {
     public static void main(String[] args) {
         ConfigurableApplicationContext context = SpringApplication.run(DemoApplication.class, args);
         TableService service = context.getBean(TableService.class);
-        service.createAllFile("hacker");
+        service.createAllFile("schemaName"); //创建所有文件
+        //service.createMapper("schemaName"); //创建 mapper接口文件
+        //service.createEntity("tableName", "schemaName"); //创建entity实体类文件
+        //service.createMapperConfig("tableName", "schemaName"); //创建mapper xml配置文件
     }
 }
 ```
