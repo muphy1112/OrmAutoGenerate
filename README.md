@@ -1,5 +1,5 @@
 # ruphy-tk-mapper-spring-boot-starter
-自动生成基于TkMapper、Mybaties、SpringBoot Starter的ORM结构，使用很简单，不过我很纠结到底使用starter还是单独的工具包好
+自动生成基于 TkMapper、Mybaties、SpringBoot Starter 的ORM结构，使用很简单，不过我很纠结到底使用starter还是单独的工具包好，TkMapper默认提供很多的通用curd方法，字段与列名映射关系在mapper.xml中写
 
 ## spring boot 项目结构
 ### 命名规范
@@ -44,6 +44,7 @@ muphy.mapper.autogenerate.entity-path=E:/workspace/recorder/src/main/java/me/mup
 muphy.mapper.autogenerate.mapper-path=E:/workspace/recorder/src/main/java/me/muphy/mapper
 # 此配置设置是否覆盖已经存在的文件
 muphy.mapper.autogenerate.replace-file=false
+# 添加datasource相关的配置
 ```
 ### 运行
 ```java
@@ -76,11 +77,11 @@ package me.muphy.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 import me.muphy.entity.SysUser;
-# import org.apache.ibatis.annotations.Select;
+//import org.apache.ibatis.annotations.Select;
 
 @Mapper
 public interface SysUserMapper extends TkMapper<SysUser> {
-    //可以直接增加一些接口， 词句与下面举例方法不属于生成的代码
+    //可以直接增加一些接口， 此句与下面举例方法不属于生成的代码
     //@Select("select * from sys_user where account like '%${name}%'")
     //List<SysUser> getUsers(String name);
 }
